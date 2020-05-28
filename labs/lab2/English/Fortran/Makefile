@@ -21,7 +21,7 @@ clean:
 
 chkalloc:
 ifndef PROJECT
-        $(error Please edit the Makefile and provide your Summit project ID)
+        $(error Please edit the Makefile and provide your allocation/project ID)
 else
         @echo "Using project $(PROJECT)"
 endif
