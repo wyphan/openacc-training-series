@@ -28,8 +28,8 @@ endif
 
 ifeq ( $(LOCATION), "ORNL" )
 LSFRUN = bsub -W 5 -nnodes 1 -P $(PROJECT) -Is jsrun -n1 -a1 -c10 -g1 --smpiargs="none"
-else ( $(LOCATION), "NERSC" )
-LSFRUN = srun -C gpu -N 1 -n 1 -t 5 -A $(PROJECT) -c 10 --gres=gpu:1
+else ifeq ( $(LOCATION), "NERSC" )
+LSFRUN = srun -C gpu -N 1 -n 1 -t 10 -A $(PROJECT) --gres=gpu:1 -c 10
 endif
 
 pgaccelinfo: chkalloc
